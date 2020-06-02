@@ -1,0 +1,303 @@
+@import "./noos/variables";
+@import "./noos/sidebar";
+
+iframe {
+  float: none !important;
+}
+
+.dc-docpostholder {
+  &:hover {
+    box-shadow: none !important;
+  }
+}
+
+.single-doctors {
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5000;
+    .dc-docsingle-header {
+      .dc-docsingleimg {
+        transition: width ease-in-out 0.3s, height ease-in-out 0.3s;
+        width: 50px;
+        height: 50px;
+        .dc-featuredtag {
+          display: none;
+        }
+      }
+    }
+    .dc-docsingle-content {
+      .dc-docinfo-specialities {
+        transition: height ease-in-out 0.3s, opacity ease-in-out 0.3s;
+        opacity: 0;
+        height: 0;
+      }
+      .dc-title {
+        transition: margin ease-in-out 0.3s;
+        margin-bottom: 5px;
+        h2 {
+          transition: font-size ease-in-out 0.3s, margin ease-in-out 0.3s;
+          font-size: 22px;
+          line-height: 22px;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+  .widget_text .textwidget {
+    background: none;
+  }
+
+  .dc-main {
+    background-color: $background-light;
+    padding-top: 0 !important;
+  }
+  .dc-header {
+    background-color: #fff;
+  }
+
+  .dc-breadcrumbarea {
+    display: none;
+  }
+
+  .dc-icon {
+    &--small {
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+      vertical-align: baseline;
+    }
+  }
+
+  .dc-docsingle-header {
+    float: none;
+    padding-top: 20px;
+    margin: 0;
+    background-color: #fff;
+
+    .dc-docsingleimg {
+      transition: width ease-in-out 0.3s, height ease-in-out 0.3s;
+      border: none;
+      width: 110px;
+      height: 110px;
+      .dc-ava-detail,
+      .dc-ava-detail-2x {
+        border-radius: 50%;
+        padding: 0;
+      }
+    }
+  }
+
+  .dc-docsingle-navholder {
+    background-color: #fff;
+    border-top: solid 1px $border-grey;
+    border-bottom: solid 1px $border-grey;
+    .navbar-nav {
+      .nav-item {
+        a {
+          border: none;
+          &.active {
+            background: none;
+            color: $nav-blue;
+            border-bottom: 2px solid $nav-blue;
+          }
+        }
+      }
+    }
+  }
+
+  .dc-card-holder {
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 20px 0;
+
+    &:first-child {
+      margin-top: 40px;
+    }
+
+    .dc-aboutinfo,
+    .dc-infotitle,
+    .dc-specializationslist,
+    .dc-description {
+      float: none;
+    }
+    h3,
+    h4 {
+      font-family: "Circular-medium";
+      font-size: 24px;
+      line-height: 24px;
+      font-weight: 500;
+      color: $dark-blue;
+    }
+    h4 {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .dc-specializations {
+      &.dc-aboutinfo {
+        margin-bottom: 10px;
+      }
+      h3 {
+        margin-top: 30px;
+      }
+      h4 {
+        display: inline-block;
+      }
+      .dc-specializationslist {
+        display: inline-block;
+        width: auto;
+        position: relative;
+        list-style: none;
+        top: 4px;
+        li:before {
+          background: none;
+        }
+      }
+    }
+  }
+
+  .dc-searchresult-head,
+  .dc-title,
+  .dc-consultation,
+  .dc-emptydata,
+  .dc-emptydata-holder,
+  .dc-consultation-content,
+  .dc-searchresult-holder,
+  .dc-searchresult-grid,
+  .dc-accordion,
+  .dc-articleimg,
+  .dc-article,
+  .dc-articleslist-content,
+  .dc-articles,
+  .dc-contentdoctab,
+  .dc-panel,
+  .dc-paneltitle,
+  .dc-panelcontent {
+    float: none;
+  }
+
+  .dc-docsingle-content {
+    min-height: auto;
+
+    .dc-title {
+      transition: margin ease-in-out 0.3s;
+      h2 {
+        font-family: "Circular-medium";
+        transition: font-size ease-in-out 0.3s;
+        font-size: 45px;
+        line-height: 45px;
+        font-weight: 500;
+        color: $dark-blue;
+        margin: 0;
+        a {
+          max-width: initial;
+          overflow: initial;
+          white-space: nowrap;
+        }
+      }
+      .dc-docinfo {
+        p {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+.dc-docinfo-specialities {
+  display: flex;
+  flex-wrap: wrap;
+  transition: height ease-in-out 0.3s, opacity ease-in-out 0.3s;
+
+  .dc-doc-specilities-tag {
+    background-color: $light-blue;
+    border-radius: 20px;
+    padding: 5px 20px;
+    margin: 0 10px 5px 0;
+    br {
+      display: none;
+    }
+    i {
+      display: none;
+    }
+    .dc-tipso {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.dc-location-holder {
+  .dc-searchvlistvtwo {
+    .dc-docpostholder {
+      border: none;
+      .dc-docpostcontent {
+        .dc-searchvtwo {
+          padding: 0;
+          float: none;
+          display: flex;
+          min-width: auto !important;
+          max-width: none !important;
+          width: 100%;
+          .dc-title {
+            h3 {
+              float: none;
+              a {
+                float: none;
+              }
+            }
+          }
+
+          .dc-docpostimg {
+            float: none;
+            width: 200px;
+            overflow: initial;
+            background: none;
+            img {
+              border-radius: 4px;
+              max-width: none;
+              float: none;
+              width: 200px;
+            }
+          }
+          .camp-check-reference {
+            float: none;
+            width: auto;
+          }
+          .dc-docinfo {
+            float: none;
+            word-break: break-all;
+          }
+          address {
+            display: inline-block;
+            font-style: normal;
+            color: $dark-blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .single-doctors {
+    .sticky {
+      position: relative;
+    }
+    .dc-docsingle-header {
+      .dc-docsingleimg {
+        margin: 0 auto;
+      }
+    }
+    .dc-docsingle-content {
+      .dc-docinfo-specialities {
+        justify-content: center;
+      }
+    }
+  }
+}
