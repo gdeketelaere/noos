@@ -11,6 +11,10 @@ iframe {
   }
 }
 
+.dc-nav {
+  font-family: "Circular-book";
+}
+
 .single-doctors {
   .sticky {
     position: fixed;
@@ -46,6 +50,18 @@ iframe {
     }
   }
 
+  .dc-innerbanner-holder {
+    display: none;
+  }
+
+  .dc-breadcrumbarea + .dc-main,
+  .dc-main {
+    padding: 0;
+  }
+  .dc-wrapper {
+    overflow-x: inherit;
+  }
+
   .widget_text .textwidget {
     background: none;
   }
@@ -56,6 +72,9 @@ iframe {
   }
   .dc-header {
     background-color: #fff;
+  }
+  .dc-parent-section {
+    background-color: $background-light;
   }
 
   .dc-breadcrumbarea {
@@ -98,6 +117,11 @@ iframe {
       .nav-item {
         a {
           border: none;
+          font-family: "Circular-medium";
+          font-size: 12px;
+          color: $nav-lightblue;
+          text-transform: uppercase;
+
           &.active {
             background: none;
             color: $nav-blue;
@@ -221,6 +245,7 @@ iframe {
 }
 
 .dc-docinfo-specialities {
+  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   transition: height ease-in-out 0.3s, opacity ease-in-out 0.3s;
@@ -230,6 +255,17 @@ iframe {
     border-radius: 20px;
     padding: 5px 20px;
     margin: 0 10px 5px 0;
+    font-family: "Circular-book";
+    font-size: 14px;
+
+    &--symtomes {
+      background-color: $light-red;
+    }
+
+    a {
+      color: $dark-blue;
+    }
+
     br {
       display: none;
     }

@@ -37,7 +37,6 @@ while (have_posts()) {
 
 ?>
 	<?php get_template_part('directory/front-end/templates/doctors/single/basic'); ?>
-	<?php get_template_part('directory/front-end/templates/doctors/single/navigation'); ?>
 
 	<div class="dc-haslayout dc-parent-section">
 		<div class="container">

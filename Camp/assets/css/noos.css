@@ -1,3 +1,33 @@
+.single-doctors aside {
+  position: relative;
+  top: -120px;
+}
+
+.single-doctors aside .dc-card-holder {
+  border: 1px solid #e3e3e3;
+}
+
+.single-doctors aside .dc-btnarea {
+  float: none;
+}
+
+.single-doctors aside .dc-btnarea .dc-btn {
+  border-radius: 40px;
+  border: none;
+  background-color: #e8f2ff;
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: "Circular-book";
+  font-size: 16px;
+  color: #251f71;
+}
+
+.single-doctors aside .dc-btnarea .dc-btn:hover {
+  background-color: #251f71;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 iframe {
   float: none !important;
 }
@@ -5,6 +35,10 @@ iframe {
 .dc-docpostholder:hover {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
+}
+
+.dc-nav {
+  font-family: "Circular-book";
 }
 
 .single-doctors .sticky {
@@ -46,6 +80,19 @@ iframe {
   margin-top: 5px;
 }
 
+.single-doctors .dc-innerbanner-holder {
+  display: none;
+}
+
+.single-doctors .dc-breadcrumbarea + .dc-main,
+.single-doctors .dc-main {
+  padding: 0;
+}
+
+.single-doctors .dc-wrapper {
+  overflow-x: inherit;
+}
+
 .single-doctors .widget_text .textwidget {
   background: none;
 }
@@ -57,6 +104,10 @@ iframe {
 
 .single-doctors .dc-header {
   background-color: #fff;
+}
+
+.single-doctors .dc-parent-section {
+  background-color: #e5f0fe;
 }
 
 .single-doctors .dc-breadcrumbarea {
@@ -99,6 +150,10 @@ iframe {
 
 .single-doctors .dc-docsingle-navholder .navbar-nav .nav-item a {
   border: none;
+  font-family: "Circular-medium";
+  font-size: 12px;
+  color: #94a1b7;
+  text-transform: uppercase;
 }
 
 .single-doctors .dc-docsingle-navholder .navbar-nav .nav-item a.active {
@@ -230,6 +285,7 @@ iframe {
 }
 
 .dc-docinfo-specialities {
+  margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -244,6 +300,16 @@ iframe {
   border-radius: 20px;
   padding: 5px 20px;
   margin: 0 10px 5px 0;
+  font-family: "Circular-book";
+  font-size: 14px;
+}
+
+.dc-docinfo-specialities .dc-doc-specilities-tag--symtomes {
+  background-color: #ffdcdc;
+}
+
+.dc-docinfo-specialities .dc-doc-specilities-tag a {
+  color: #251f71;
 }
 
 .dc-docinfo-specialities .dc-doc-specilities-tag br {

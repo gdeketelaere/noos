@@ -107,6 +107,8 @@ $map = do_shortcode( '[camp_map]' );
 ?>
 
 <div class="dc-docsingle-header">
+	<div class="container">
+		<div class="row">
 
 	<?php if( !empty( $doctor_avatar ) ){?>
 
@@ -144,31 +146,54 @@ $map = do_shortcode( '[camp_map]' );
 
 			</h2>
 
-			<div class="dc-docinfo">				
+						<div class="dc-docinfo">				
 
-				<div><?php echo $map ;?></div>					
+							<div><?php echo $map ;?></div>					
 
-				<div class="dc-docinfo-location">
+							<div class="dc-docinfo-location">
 
-					<img class="dc-icon--small" src="<?php echo get_stylesheet_directory_uri() . '/assets/svg/map-pointer.svg'; ?> "/><?php echo $address ;?>
+								<img class="dc-icon--small" src="<?php echo get_stylesheet_directory_uri() . '/assets/svg/map-pointer.svg'; ?> "/><?php echo $address ;?>
 
-				</div>				
+							</div>				
 
+						</div>
+
+						<div class="dc-docinfo-specialities">
+							<?php do_action('camp_specilities_list',$post_id);?>
+						</div>
+						
+						<div class="dc-docinfo-specialities">
+							<?php do_action('camp_specilities_list',$post_id,'symtomes');?>	
+						</div>	
+
+					</div>
+
+				</div>
+				
 			</div>
 
-			<div class="dc-docinfo-specialities">
-
-				<?php do_action('camp_specilities_list',$post_id);?>
-
-				<?php do_action('camp_specilities_list',$post_id,'symtomes');?>		
-
-			</div>
 		</div>
-
-
-		
-
+		<?php get_template_part('directory/front-end/templates/doctors/single/navigation'); ?>
 	</div>
 
 </div>
 
+<script>
+	// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("dc-main");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>

@@ -20,7 +20,7 @@
 
  */
 ?>
-
+<div class="dc-card-holder">
 <div class="dc-btnarea">
 
 			<a href="#" class="dc-btn" id ="myBtn_contact"><?php _e('Contact','doctreat');?></a>
@@ -45,7 +45,8 @@
 
 			<?php doctreat_prepare_social_sharing( false,esc_html__('Share Profile','doctreat'),true,'dc-simplesocialicons dc-socialiconsborder',$thumbnail ); ?>
 
-		</div>
+        </div>
+                </div>
 
 <div id="myModal" class="modal">
 
