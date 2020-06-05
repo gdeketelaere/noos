@@ -1,0 +1,313 @@
+iframe {
+  float: none !important;
+}
+
+.dc-docpostholder:hover {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.single-doctors .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5000;
+}
+
+.single-doctors .sticky .dc-docsingle-header .dc-docsingleimg {
+  -webkit-transition: width ease-in-out 0.3s, height ease-in-out 0.3s;
+  transition: width ease-in-out 0.3s, height ease-in-out 0.3s;
+  width: 50px;
+  height: 50px;
+}
+
+.single-doctors .sticky .dc-docsingle-header .dc-docsingleimg .dc-featuredtag {
+  display: none;
+}
+
+.single-doctors .sticky .dc-docsingle-content .dc-docinfo-specialities {
+  -webkit-transition: height ease-in-out 0.3s, opacity ease-in-out 0.3s;
+  transition: height ease-in-out 0.3s, opacity ease-in-out 0.3s;
+  opacity: 0;
+  height: 0;
+}
+
+.single-doctors .sticky .dc-docsingle-content .dc-title {
+  -webkit-transition: margin ease-in-out 0.3s;
+  transition: margin ease-in-out 0.3s;
+  margin-bottom: 5px;
+}
+
+.single-doctors .sticky .dc-docsingle-content .dc-title h2 {
+  -webkit-transition: font-size ease-in-out 0.3s, margin ease-in-out 0.3s;
+  transition: font-size ease-in-out 0.3s, margin ease-in-out 0.3s;
+  font-size: 22px;
+  line-height: 22px;
+  margin-top: 5px;
+}
+
+.single-doctors .widget_text .textwidget {
+  background: none;
+}
+
+.single-doctors .dc-main {
+  background-color: #e5f0fe;
+  padding-top: 0 !important;
+}
+
+.single-doctors .dc-header {
+  background-color: #fff;
+}
+
+.single-doctors .dc-breadcrumbarea {
+  display: none;
+}
+
+.single-doctors .dc-icon--small {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  vertical-align: baseline;
+}
+
+.single-doctors .dc-docsingle-header {
+  float: none;
+  padding-top: 20px;
+  margin: 0;
+  background-color: #fff;
+}
+
+.single-doctors .dc-docsingle-header .dc-docsingleimg {
+  -webkit-transition: width ease-in-out 0.3s, height ease-in-out 0.3s;
+  transition: width ease-in-out 0.3s, height ease-in-out 0.3s;
+  border: none;
+  width: 110px;
+  height: 110px;
+}
+
+.single-doctors .dc-docsingle-header .dc-docsingleimg .dc-ava-detail,
+.single-doctors .dc-docsingle-header .dc-docsingleimg .dc-ava-detail-2x {
+  border-radius: 50%;
+  padding: 0;
+}
+
+.single-doctors .dc-docsingle-navholder {
+  background-color: #fff;
+  border-top: solid 1px #e3e3e3;
+  border-bottom: solid 1px #e3e3e3;
+}
+
+.single-doctors .dc-docsingle-navholder .navbar-nav .nav-item a {
+  border: none;
+}
+
+.single-doctors .dc-docsingle-navholder .navbar-nav .nav-item a.active {
+  background: none;
+  color: #05a1fb;
+  border-bottom: 2px solid #05a1fb;
+}
+
+.single-doctors .dc-card-holder {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.single-doctors .dc-card-holder:first-child {
+  margin-top: 40px;
+}
+
+.single-doctors .dc-card-holder .dc-aboutinfo,
+.single-doctors .dc-card-holder .dc-infotitle,
+.single-doctors .dc-card-holder .dc-specializationslist,
+.single-doctors .dc-card-holder .dc-description {
+  float: none;
+}
+
+.single-doctors .dc-card-holder h3,
+.single-doctors .dc-card-holder h4 {
+  font-family: "Circular-medium";
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #251f71;
+}
+
+.single-doctors .dc-card-holder h4 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.single-doctors .dc-card-holder .dc-specializations.dc-aboutinfo {
+  margin-bottom: 10px;
+}
+
+.single-doctors .dc-card-holder .dc-specializations h3 {
+  margin-top: 30px;
+}
+
+.single-doctors .dc-card-holder .dc-specializations h4 {
+  display: inline-block;
+}
+
+.single-doctors .dc-card-holder .dc-specializations .dc-specializationslist {
+  display: inline-block;
+  width: auto;
+  position: relative;
+  list-style: none;
+  top: 4px;
+}
+
+.single-doctors .dc-card-holder .dc-specializations .dc-specializationslist li:before {
+  background: none;
+}
+
+.single-doctors .dc-searchresult-head,
+.single-doctors .dc-title,
+.single-doctors .dc-consultation,
+.single-doctors .dc-emptydata,
+.single-doctors .dc-emptydata-holder,
+.single-doctors .dc-consultation-content,
+.single-doctors .dc-searchresult-holder,
+.single-doctors .dc-searchresult-grid,
+.single-doctors .dc-accordion,
+.single-doctors .dc-articleimg,
+.single-doctors .dc-article,
+.single-doctors .dc-articleslist-content,
+.single-doctors .dc-articles,
+.single-doctors .dc-contentdoctab,
+.single-doctors .dc-panel,
+.single-doctors .dc-paneltitle,
+.single-doctors .dc-panelcontent {
+  float: none;
+}
+
+.single-doctors .dc-docsingle-content {
+  min-height: auto;
+}
+
+.single-doctors .dc-docsingle-content .dc-title {
+  -webkit-transition: margin ease-in-out 0.3s;
+  transition: margin ease-in-out 0.3s;
+}
+
+.single-doctors .dc-docsingle-content .dc-title h2 {
+  font-family: "Circular-medium";
+  -webkit-transition: font-size ease-in-out 0.3s;
+  transition: font-size ease-in-out 0.3s;
+  font-size: 45px;
+  line-height: 45px;
+  font-weight: 500;
+  color: #251f71;
+  margin: 0;
+}
+
+.single-doctors .dc-docsingle-content .dc-title h2 a {
+  max-width: initial;
+  overflow: initial;
+  white-space: nowrap;
+}
+
+.single-doctors .dc-docsingle-content .dc-title .dc-docinfo p {
+  margin-bottom: 10px;
+}
+
+.dc-docinfo-specialities {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-transition: height ease-in-out 0.3s, opacity ease-in-out 0.3s;
+  transition: height ease-in-out 0.3s, opacity ease-in-out 0.3s;
+}
+
+.dc-docinfo-specialities .dc-doc-specilities-tag {
+  background-color: #e8f2ff;
+  border-radius: 20px;
+  padding: 5px 20px;
+  margin: 0 10px 5px 0;
+}
+
+.dc-docinfo-specialities .dc-doc-specilities-tag br {
+  display: none;
+}
+
+.dc-docinfo-specialities .dc-doc-specilities-tag i {
+  display: none;
+}
+
+.dc-docinfo-specialities .dc-doc-specilities-tag .dc-tipso {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dc-location-holder .dc-searchvlistvtwo .dc-docpostholder {
+  border: none;
+}
+
+.dc-location-holder .dc-searchvlistvtwo .dc-docpostholder .dc-docpostcontent .dc-searchvtwo {
+  padding: 0;
+  float: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: auto !important;
+  max-width: none !important;
+  width: 100%;
+}
+
+.dc-location-holder .dc-searchvlistvtwo .dc-docpostholder .dc-docpostcontent .dc-searchvtwo .dc-title h3 {
+  float: none;
+}
+
+.dc-location-holder .dc-searchvlistvtwo .dc-docpostholder .dc-docpostcontent .dc-searchvtwo .dc-title h3 a {
+  float: none;
+}
+
+.dc-location-holder .dc-searchvlistvtwo .dc-docpostholder .dc-docpostcontent .dc-searchvtwo .dc-docpostimg {
+  float: none;
+  width: 200px;
+  overflow: initial;
+  background: none;
+}
+
+.dc-location-holder .dc-searchvlistvtwo .dc-docpostholder .dc-docpostcontent .dc-searchvtwo .dc-docpostimg img {
+  border-radius: 4px;
+  max-width: none;
+  float: none;
+  width: 200px;
+}
+
+.dc-location-holder .dc-searchvlistvtwo .dc-docpostholder .dc-docpostcontent .dc-searchvtwo .camp-check-reference {
+  float: none;
+  width: auto;
+}
+
+.dc-location-holder .dc-searchvlistvtwo .dc-docpostholder .dc-docpostcontent .dc-searchvtwo .dc-docinfo {
+  float: none;
+  word-break: break-all;
+}
+
+.dc-location-holder .dc-searchvlistvtwo .dc-docpostholder .dc-docpostcontent .dc-searchvtwo address {
+  display: inline-block;
+  font-style: normal;
+  color: #251f71;
+}
+
+@media only screen and (max-width: 768px) {
+  .single-doctors .sticky {
+    position: relative;
+  }
+  .single-doctors .dc-docsingle-header .dc-docsingleimg {
+    margin: 0 auto;
+  }
+  .single-doctors .dc-docsingle-content .dc-docinfo-specialities {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+/*# sourceMappingURL=noos.css.map */
