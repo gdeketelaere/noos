@@ -194,12 +194,24 @@ iframe {
         color: $dark-blue;
         margin: 0;
         a {
+          color: $dark-blue;
           max-width: initial;
           overflow: initial;
           white-space: nowrap;
         }
       }
       .dc-docinfo {
+        float: none;
+
+        .form-group.dc-formmap,
+        small {
+          display: none;
+        }
+        &-location {
+          color: $dark-blue;
+          font-size: 15px;
+          font-family: "Circular-book";
+        }
         p {
           margin-bottom: 10px;
         }

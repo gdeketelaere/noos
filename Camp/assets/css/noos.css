@@ -204,9 +204,25 @@ iframe {
 }
 
 .single-doctors .dc-docsingle-content .dc-title h2 a {
+  color: #251f71;
   max-width: initial;
   overflow: initial;
   white-space: nowrap;
+}
+
+.single-doctors .dc-docsingle-content .dc-title .dc-docinfo {
+  float: none;
+}
+
+.single-doctors .dc-docsingle-content .dc-title .dc-docinfo .form-group.dc-formmap,
+.single-doctors .dc-docsingle-content .dc-title .dc-docinfo small {
+  display: none;
+}
+
+.single-doctors .dc-docsingle-content .dc-title .dc-docinfo-location {
+  color: #251f71;
+  font-size: 15px;
+  font-family: "Circular-book";
 }
 
 .single-doctors .dc-docsingle-content .dc-title .dc-docinfo p {
