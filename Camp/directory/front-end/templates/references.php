@@ -94,7 +94,7 @@ $count_post = $loop->found_posts;
 
 
 
-<div class="dc-dashboardbox dc-dashboardinvocies">
+<div class="dc-dashboardbox dc-dashboardinvocies dc-references">
 
 	<div class="dc-dashboardboxtitle dc-titlewithsearch">
 
@@ -142,38 +142,25 @@ $count_post = $loop->found_posts;
 
 			?>
 
-						<div class="dc-docpostholder">
+						<div class="dc-docpostholder dc-card-holder">
 
-							<div class="dc-docpostcontent" style="display: flex; flex-wrap: wrap; justify-content: space-between;">	
+							<div class="dc-docpostcontent">	
 
-								<div class="dc-searchvtwo" style="width: 80%;">								
+								<div class="dc-searchvtwo">								
 
-									<figure class="dc-docpostimg" style="width: 200px;">
-
-										<img class="dc-image-res" src="<?php the_post_thumbnail_url(); ?>" alt="Summer spring Hospital">
-
-										<img class="dc-image-res-2x" src="<?php the_post_thumbnail_url(); ?>" alt="Summer spring Hospital">
-
+									<figure class="dc-docpostimg">
+										<?php the_post_thumbnail( array( 100, 100, 'class' => 'post-thumb dc-image-res') );?>
+										<?php the_post_thumbnail( array( 200, 200, 'class' => 'post-thumb dc-image-res-2x') );?>
 									</figure>
-
+<div>
 									<div class="dc-title">
-										
-											<div class="dc-doc-specilities-tag">
-
-												<?php do_action('camp_specilities_list',$post_ref_id);?>
-
-												<?php do_action('camp_specilities_list',$post_ref_id,'symtomes');?>
-
-											</div>
-										
-
-										<h3 style="width: 100%;">
+										<h3>
 
 											<a href="<?php the_permalink();?>"><?php the_title();?></a>
 
 											<?php if (!empty($_is_verified)) {?>
 
-												<i class="far fa-check-circle dc-awardtooltip dc-tipso tipso_style" style="color:#1abc9c;" data-tipso="Verified user"></i><?php
+												<i class="far fa-check-circle dc-awardtooltip dc-tipso tipso_style" data-tipso="Verified user"></i><?php
 
 											}
 
@@ -181,31 +168,39 @@ $count_post = $loop->found_posts;
 
 										</h3>
 
-										<div class="dc-docinfo" style="color:black;">
+							
 
-											<?php echo camp_get_comment_reference ($post_id, get_the_ID()); ?>
-
-										</div>							
-
+									</div>
+									<div class="dc-docinfo-specialities">
+										<?php do_action('camp_specilities_list',$post_ref_id);?>
+									</div>
+									<div class="dc-docinfo-specialities">
+										<?php do_action('camp_specilities_list',$post_ref_id,'symtomes');?>
 									</div>
 
 								</div>
 
-								<div class="dc-actions" style="width: 20%;">
+								</div>
 
-									<a data-toggle="collapse" class="camp-check-reference" href="#">
+								<div class="dc-docinfo">
 
-										<i class="lnr lnr-location"></i><?php echo $address ;?>
+								<p><?php echo camp_get_comment_reference ($post_id, get_the_ID()); ?></p>
 
-									</a>										
+								</div>
+								<div class="dc-actions">
+
+									<p>
+
+										<img class="dc-icon--small" src="<?php echo get_stylesheet_directory_uri() . '/assets/svg/map-pointer.svg'; ?> "/><?php echo $address ;?>
+
+										</p>									
 
 								</div>						
 
 							</div>
 
 						</div>	
-
-						<!-- The Modal -->			
+	
 
 												
 

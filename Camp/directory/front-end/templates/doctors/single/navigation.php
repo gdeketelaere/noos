@@ -24,7 +24,11 @@
 <div class="container">
 		<div class="row">
 <ul class="dc-navdocsingletab nav navbar-nav">
+            <li class="nav-item">
 
+              <a id="userdetails-tab" class="active" data-toggle="tab" href="#userdetails"><?php esc_html_e('Doctor Details','doctreat');?></a>
+
+            </li>
             <?php if( empty($system_access) ){ ?>
 
                 <li class="nav-item">
@@ -34,12 +38,6 @@
                 </li>
 
             <?php } ?>
-
-            <li class="nav-item">
-
-                <a id="userdetails-tab" class="active" data-toggle="tab" href="#userdetails"><?php esc_html_e('Doctor Details','doctreat');?></a>
-
-            </li>
 
             <li class="nav-item">
 
@@ -75,25 +73,25 @@ jQuery('a[href*="#"]')
       && 
       location.hostname == this.hostname
     ) {
-      // Figure out element to scroll to
+
       var target = jQuery(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      // Does a scroll target exist?
+
       if (target.length) {
-        // Only prevent default if animation is actually gonna happen
+
         event.preventDefault();
+        var posY = target.offset().top;
         jQuery('html, body').animate({
-          scrollTop: target.offset().top
+          scrollTop: posY - 150
         }, 1000, function() {
-          // Callback after animation
-          // Must change focus!
+
           var $target = jQuery(target);
-          $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
+          //$target.focus();
+          if ($target.is(":focus")) { 
             return false;
           } else {
-            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
+            $target.attr('tabindex','-1'); 
+            //$target.focus(); 
           };
         });
       }
