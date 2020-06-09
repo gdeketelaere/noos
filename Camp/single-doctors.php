@@ -16,7 +16,7 @@ global $theme_settings, $current_user;
 $booking_option		= doctreat_theme_option();
 $system_access		= !empty($theme_settings['system_access']) ? $theme_settings['system_access'] : '';
 if (is_active_sidebar('doctor-sidebar-right')) {
-	$section_width     	= 'col-12 col-lg-12 col-xl-9';
+	$section_width     	= 'col-12 col-lg-12 col-xl-8';
 } else {
 	$section_width     	= 'col-12';
 }
@@ -37,7 +37,6 @@ while (have_posts()) {
 
 ?>
 	<?php get_template_part('directory/front-end/templates/doctors/single/basic'); ?>
-	<?php get_template_part('directory/front-end/templates/doctors/single/navigation'); ?>
 
 	<div class="dc-haslayout dc-parent-section">
 		<div class="container">
@@ -57,13 +56,13 @@ while (have_posts()) {
 
 					</div>
 					<?php if (is_active_sidebar('doctor-sidebar-right')) { ?>
-						<div class="col-12 col-md-6 col-lg-6 col-xl-3 float-left">
+						<div class="col-12 col-md-6 col-lg-6 col-xl-4 float-left">
 							<aside id="dc-sidebar" class="dc-sidebar dc-sidebar-grid float-left mt-xl-0">
 								<?php
 								if (is_active_sidebar('doctor-sidebar-right')) {
                                     get_template_part('directory/front-end/templates/doctors/single/cta-sidebar');
                                    
-                                    get_template_part('directory/front-end/templates/doctors-location-sidebar');
+                                    //get_template_part('directory/front-end/templates/doctors-location-sidebar');
                                    
 									dynamic_sidebar('doctor-sidebar-right');
 								}

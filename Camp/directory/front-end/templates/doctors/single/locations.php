@@ -43,7 +43,7 @@ $count_post         = $query->found_posts;
     <div class="dc-searchresult-holder">
         <div class="dc-searchresult-head">
             <div class="dc-title">
-                <h4>“<?php echo esc_html($name); ?>” <?php esc_html_e('Locations', 'doctreat'); ?></h4>
+                <h3>“<?php echo esc_html($name); ?>” <?php esc_html_e('Locations', 'doctreat'); ?></h3>
             </div>
         </div>
         <div class="dc-searchresult-grid dc-searchresult-list dc-searchvlistvtwo">
@@ -67,10 +67,11 @@ $count_post         = $query->found_posts;
             } ?>
         </div>
     </div>
+    <br/>
     <div class="dc-searchresult-holder">
         <div class="dc-searchresult-head">
             <div class="dc-title">
-                <h4>“<?php echo esc_html($name); ?>” <?php esc_html_e('Custom Locations', 'doctreat'); ?></h4>
+                <h3>“<?php echo esc_html($name); ?>” <?php esc_html_e('Custom Locations', 'doctreat'); ?></h3>
             </div>
         </div>
         <div class="dc-searchresult-grid dc-searchresult-list dc-searchvlistvtwo">
@@ -87,6 +88,7 @@ $count_post         = $query->found_posts;
                     $days_offer = !empty($location['days_offer']) ? $location['days_offer'] : array();
 
             ?>
+           
                     <div class="dc-docpostholder">
                         <div class="dc-docpostcontent">
                             <div class="dc-searchvtwo" style="max-width: 100%; padding: 10px;">
@@ -94,21 +96,23 @@ $count_post         = $query->found_posts;
                                     <img class="dc-image-res" src="<?php echo $image_url; ?>" alt="<?php echo $address; ?>">
                                     <img class="dc-image-res-2x" src="<?php echo $image_url; ?>" alt="<?php echo $address; ?>">
                                 </figure>
-                                <div class="dc-title" style="display: flex; flex-wrap: wrap;">
-                                    <h3 style="width: 100%;">
-                                        <a href=""><i class="ti-direction-alt"></i><?php echo $city . ' : ' . $address; ?></a>
-                                    </h3>
-                                    <ul class="dc-docinfo">
+                                <div class="dc-title">
+                                    <h3><?php esc_html_e('Address', 'doctreat'); ?></h3>
+                                    <p><?php echo $address; ?></p>
+                                   <!-- <ul class="dc-docinfo">
                                         <?php if (!empty($days_offer)) :
                                             foreach ($days_offer as $key2 => $day_offer) : ?>
-                                                <li style="display: flex; flex-wrap: wrap;"><i class="lnr lnr-clock"></i><?php echo ucfirst($key2) . '  :  '; ?><em><?php if ($day_offer["start_time"] !== $day_offer["end_time"]) {
-                                                                                                                                                                        echo $day_offer["start_time"] . ' - ' . $day_offer["end_time"];
-                                                                                                                                                                    } else {
-                                                                                                                                                                        echo "24h/24";
-                                                                                                                                                                    } ?></em></li>
+                                                <li>
+                                                    <i class="lnr lnr-clock"></i>
+                                                    <?php echo ucfirst($key2) . '  :  '; ?>
+                                                    <em><?php if ($day_offer["start_time"] !== $day_offer["end_time"]) {
+                                                            echo $day_offer["start_time"] . ' - ' . $day_offer["end_time"];
+                                                        } else {
+                                                            echo "24h/24";
+                                                        } ?></em></li>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
-                                    </ul>
+                                    </ul>-->
                                 </div>
                             </div>
                         </div>

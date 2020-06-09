@@ -291,7 +291,7 @@
 
 //Spécialités et symtomes du profil praticien
 
-function camp_get_terms_doctors($post_id='', $taxonomy='specialities', $show_number=1){
+function camp_get_terms_doctors($post_id='', $taxonomy='specialities', $show_number=5){
 		
 	if( !empty($post_id) ) {
 		$terms	= wp_get_post_terms( $post_id, $taxonomy, array( 'fields' => 'all' ) );
@@ -303,24 +303,26 @@ function camp_get_terms_doctors($post_id='', $taxonomy='specialities', $show_num
 			$tipsco_html	= '';
 			$total_sp_count	= !empty($terms) ? count($terms) : 0;
 			$remining_count	= $total_sp_count - $show_number;
-			?>
-			<div class="dc-doc-specilities-tag">
-				<?php foreach( $terms as $term ){
-					$term_url	= get_term_link($term);
-					if( $sp_count<$show_number ){ ?>
+            ?>
+            <?php foreach( $terms as $term ){ 
+                $term_url	= get_term_link($term);?>
+                <div class="dc-doc-specilities-tag dc-doc-specilities-tag--<?php echo $taxonomy; ?>">
+                    <?php 
+                    if( $sp_count<$show_number ){ ?>
 						<a href="<?php echo esc_url($term_url);?>"><?php echo esc_html($term->name);?></a>
                     <?php } else { 
 						$tipsco_html	.="<a href='".esc_url($term_url)."' >".esc_html($term->name)."</a>";
 					}
 					$sp_count++;
-				}
-
+				
 				if($total_sp_count>$show_number){
 				?>
 					<a href="javascript:;" class="dc-specilites-tipso dc-tipso" data-tipso="<?php echo do_shortcode( $tipsco_html );?>" data-id="<?php echo intval($post_id);?>">+<?php echo intval($remining_count);?><i class="fa fa-caret-down"></i></a>
-				<?php }?>
-			</div>
-			<?php
+                <?php }?>
+            </div>
+       
+            <?php  
+            }
 		}
 		
 		echo ob_get_clean();
