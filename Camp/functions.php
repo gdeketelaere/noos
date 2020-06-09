@@ -298,22 +298,9 @@ function camp_get_terms_doctors($post_id='', $taxonomy='specialities', $show_num
             <?php foreach( $terms as $term ){ 
                 $term_url	= get_term_link($term);?>
                 <div class="dc-doc-specilities-tag dc-doc-specilities-tag--<?php echo $taxonomy; ?>">
-                    <?php 
-                    if( $sp_count<$show_number ){ ?>
-						<a href="<?php echo esc_url($term_url);?>"><?php echo esc_html($term->name);?></a>
-                    <?php } else { 
-						$tipsco_html	.="<a href='".esc_url($term_url)."' >".esc_html($term->name)."</a>";
-					}
-					$sp_count++;
-				
-				if($total_sp_count>$show_number){
-				?>
-					<a href="javascript:;" class="dc-specilites-tipso dc-tipso" data-tipso="<?php echo do_shortcode( $tipsco_html );?>" data-id="<?php echo intval($post_id);?>">+<?php echo intval($remining_count);?><i class="fa fa-caret-down"></i></a>
-                <?php }?>
-            </div>
-       
-            <?php  
-            }
+					<a href="<?php echo esc_url($term_url);?>"><?php echo esc_html($term->name);?></a>
+            	</div>   
+			<?php  } 
 		}
 		
 		echo ob_get_clean();
@@ -349,10 +336,7 @@ function camp_get_terms_post($post_id='', $taxonomy='category', $show_number=5){
 					$sp_count++;
 				}
 
-				if($total_sp_count>$show_number){
 				?>
-					<a href="javascript:;" class="dc-specilites-tipso dc-tipso" data-tipso="<?php echo do_shortcode( $tipsco_html );?>" data-id="<?php echo intval($post_id);?>">+<?php echo intval($remining_count);?><i class="fa fa-caret-down"></i></a>
-				<?php }?>
 			</div>
 			<?php
 		}

@@ -93,8 +93,8 @@ $count_post         = $query->found_posts;
                         <div class="dc-docpostcontent">
                             <div class="dc-searchvtwo" style="max-width: 100%; padding: 10px;">
                                 <figure class="dc-docpostimg">
-                                    <img class="dc-image-res" src="<?php echo $image_url; ?>" alt="<?php echo $address; ?>">
-                                    <img class="dc-image-res-2x" src="<?php echo $image_url; ?>" alt="<?php echo $address; ?>">
+                                    <img class="dc-image-res" src="<?php echo $image_url; ?>" >
+                                    <img class="dc-image-res-2x" src="<?php echo $image_url; ?>" >
                                 </figure>
                                 <div class="dc-title">
                                     <h3><?php esc_html_e('Address', 'doctreat'); ?></h3>
