@@ -46,6 +46,20 @@ if (isset($_SESSION['camp_reference_delete']) && !empty($_SESSION['camp_referenc
 		$_SESSION['camp_reference_delete']="";
 }
 
+if (isset($_SESSION['camp_reference_modified']) && !empty($_SESSION['camp_reference_modified']) && isset($_SESSION['camp_reference_modified_notice']) && $_SESSION['camp_reference_modified_notice']=="yes"){
+		
+		$save_ref_ids= get_post_meta( $post_id, '_saved_references', true);
+
+		$ref=$_SESSION['camp_reference_modified']['id'];
+		$save_ref_ids[$ref]['comment']=$_SESSION['camp_reference_modified']['comment'];
+
+		update_post_meta($post_id, '_saved_references', $save_ref_ids);
+		$notice='<div id="message" class="alert-success">
+			<p>La référence a été mise à jour avec succes</p></div>';
+		$_SESSION['camp_reference_delete_notice']="";
+		$_SESSION['camp_reference_modified']=array();
+}
+
 $save_references_ids	= get_post_meta( $post_id, '_saved_references', true);
 
 $empty_array[] = array('id'=>0, 'comment'=>'');
@@ -84,9 +98,10 @@ echo $notice;
 		<div class="dc-dashboardboxtitle dc-titlewithsearch">
 			<h2><?php esc_html_e( 'References Saved', 'doctreat' ); ?></h2>
 		</div>
+		<div><input type="text" name="ref-saved-list-search" id="ref-saved-list-search" placeholder="search here..." onkeyup="camp_ajax_fetch_ref_saved()"></input></div>
 
 		<div class="dc-dashboardboxcontent dc-categoriescontentholder dc-categoriesholder">		
-			<div class="dc-searchresult-grid dc-searchresult-list dc-searchvlistvtwo">
+			<div class="dc-searchresult-grid dc-searchresult-list dc-searchvlistvtwo" id="references-saved-list">
 				<?php
 
 					if($loop->have_posts()) :
@@ -98,6 +113,10 @@ echo $notice;
 					    	$featured	= get_post_meta(get_the_ID(),'is_featured',true);
 					    	$verified	= get_post_meta($post_ref_id, '_is_verified', true);
 							$verified	= !empty( $verified ) ? $verified	: '';
+
+							$comment = camp_get_comment_reference ($post_id, get_the_ID());
+							$comment = !empty($comment) ? $comment : '' ;
+							$comment_resume = substr($comment, 0,50);
 			    	
 				?>
 							<div class="dc-docpostholder">
@@ -120,11 +139,14 @@ echo $notice;
 												?>												
 											</h3>
 											<ul class="dc-docinfo">
-												<li><em>All our best </em></li>
+												<li><em><?php echo $comment_resume.'...'; ?></em></li>
 											</ul>							
 										</div>
 									</div>
 									<div class="dc-actions" style="width: 20%;">
+										<a data-toggle="collapse" class="camp-edit-reference" href="<?php echo '#collapse_modified'.$post_ref_id;?>" aria-expanded="false" aria-controls="<?php echo '#collapse_modified'.$post_ref_id;?>">
+											<span class="lnr lnr-pencil"></span>
+										</a>
 										<a data-toggle="collapse" class="camp-delete-reference" href="<?php echo '#collapse'.$post_ref_id;?>" aria-expanded="false" aria-controls="<?php echo '#collapse'.$post_ref_id;?>">
 											<span class="lnr lnr-trash"></span>
 										</a>										
@@ -153,6 +175,32 @@ echo $notice;
 									</div>
 								</div>
 							</div>	
+							<!-- The Modal -->	
+							<div class="collapse" id="<?php echo 'collapse_modified'.$post_ref_id;?>">
+							    <div class="container">
+									<div class="dc-tabscontenttitle dc-addnew">
+										<h3><?php esc_html_e('Modifier le texte de recommandation','doctreat');?></h3>
+									</div>					
+									<div class="dc-collapseexp" style="background-color: transparent;">
+										<div class="dc-formtheme dc-userform">
+											<fieldset>
+												<form action="" method="post">		
+													<div class="form-group">
+														<input type= "hidden" name="camp_post_id_ref2" value="<?php echo $post_ref_id ;?>">
+														<input type= "hidden" name="camp_post_id_user_ref2" value="<?php echo $post_id ;?>">
+														<input type= "hidden" name="camp_action_ref2" value="modified">
+
+														<div class="form-group">
+															<textarea class="form-control" name="camp_desc_reference_modified" placeholder="<?php esc_html_e('Laissez un commentaire','doctreat');?>"><?php echo $comment;?></textarea>
+														</div>			
+														<input type= "submit" class="dc-btn" value="<?php esc_attr_e('Update recommandation','doctreat');?>">
+													</div>
+												</form>								
+											</fieldset>
+										</div> 						  
+									</div>
+								</div>
+							</div>	
 							<!-- The Modal -->			
 													
 						<?php endwhile;
@@ -168,3 +216,16 @@ echo $notice;
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	function camp_ajax_fetch_ref_saved(){
+	    jQuery.ajax({
+	        url: '<?php echo admin_url('admin-ajax.php'); ?>',
+	        type: 'post',
+	        data: { action: 'camp_data_fetch_ref_saved', keyword_search_ref_saved : jQuery('#ref-saved-list-search').val() },
+	        success: function(data) {
+	            jQuery('#references-saved-list').html( data );
+	        }
+	    });
+
+	}
+</script>

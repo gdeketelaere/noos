@@ -73,9 +73,10 @@ if (isset($_SESSION['reference_notice_add']) && $_SESSION['reference_notice_add'
 		<div class="dc-dashboardboxtitle dc-titlewithsearch">
 			<h2><?php esc_html_e( 'Add References', 'doctreat' ); ?></h2>
 		</div>
+		<div><input type="text" name="ref-list-search" id="ref-list-search" placeholder="search here..." onkeyup="camp_ajax_fetch_ref_new()"></input></div>
 
 		<div class="dc-dashboardboxcontent dc-categoriescontentholder dc-categoriesholder">		
-			<div class="dc-searchresult-grid dc-searchresult-list dc-searchvlistvtwo">
+			<div class="dc-searchresult-grid dc-searchresult-list dc-searchvlistvtwo" id="references-list">
 				<?php
 
 					if($loop->have_posts()) :
@@ -161,3 +162,16 @@ if (isset($_SESSION['reference_notice_add']) && $_SESSION['reference_notice_add'
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	function camp_ajax_fetch_ref_new(){
+	    jQuery.ajax({
+	        url: '<?php echo admin_url('admin-ajax.php'); ?>',
+	        type: 'post',
+	        data: { action: 'camp_data_fetch_ref_new', keyword_search_ref_new : jQuery('#ref-list-search').val() },
+	        success: function(data) {
+	            jQuery('#references-list').html( data );
+	        }
+	    });
+
+	}
+</script>
