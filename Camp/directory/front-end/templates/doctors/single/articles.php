@@ -128,6 +128,8 @@ $_class = $_href_see_more == 1 ? 'active':'active';
 
 									$categries		=  get_the_term_list( $post->ID, 'category', '', ',', '' );
 
+									$categories		=  get_the_terms($post->ID, 'category');
+
 									?>
 
 									<div class="dc-article">
@@ -148,15 +150,26 @@ $_class = $_href_see_more == 1 ? 'active':'active';
 
 											<div class="dc-title">
 
-												<?php if( !empty( $categries ) ) { ?><div class="dc-tag-v2"><?php echo do_shortcode( $categries );?></div><?php }?>
+												
 
 												<h3><a href="<?php echo esc_url( get_the_permalink() );?>"><?php the_title();?></a></h3>
 
-												<?php do_action('doctreat_post_date',$post->ID);?>
-
+												<?php if( $categories ) { ?>
+													<div class="dc-docinfo-specialities">
+													<?php foreach ( $categories as $category ) { ?>
+														<div class="dc-doc-specilities-tag dc-doc-specilities-tag--specialities">
+														<a href="<?php echo esc_url(get_term_link($category));?>"><?php echo $category->name; ?></a>
+														</div>
+													<?php } ?>
+													</div>
+												<?php } ?>
+												
+												<?php //do_action('doctreat_post_date',$post->ID);?>
+												<p><?php echo wp_trim_words(get_the_content(), 30); ?></p>
+												<a href="<?php echo esc_url( get_the_permalink() );?>"><?php esc_html_e('Read this article', 'doctreat'); ?></a>
 											</div>
 
-											<div class="dc-optionarea">
+											<!--<div class="dc-optionarea">
 
 												<?php do_action('doctreat_get_article_sharing',$post->ID);?>												
 
@@ -166,7 +179,7 @@ $_class = $_href_see_more == 1 ? 'active':'active';
 
 												</div>						
 
-											</div>
+											</div>-->
 
 										</div>
 
