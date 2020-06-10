@@ -26,14 +26,14 @@
 <ul class="dc-navdocsingletab nav navbar-nav">
             <li class="nav-item">
 
-              <a id="userdetails-tab" class="active" data-toggle="tab" href="#userdetails"><?php esc_html_e('Doctor Details','doctreat');?></a>
+              <a id="userdetails-tab" class="active" data-toggle="tab" href="#userdetails"><?php esc_html_e('Description','doctreat');?></a>
 
             </li>
             <?php if( empty($system_access) ){ ?>
 
                 <li class="nav-item">
 
-                    <a data-toggle="tab" href="#locations"><?php esc_html_e('Available Locations','doctreat');?></a>
+                    <a data-toggle="tab" href="#locations"><?php esc_html_e('Locations','doctreat');?></a>
 
                 </li>
 
@@ -41,21 +41,29 @@
 
             <li class="nav-item">
 
-                <a id="comments-tab" data-toggle="tab" href="#comments"><?php esc_html_e('Online Consultation','doctreat');?></a>
+            <a id="comments-tab" data-toggle="tab" href="#campservices"><?php esc_html_e('Sessions','doctreat');?></a>
 
             </li>
 
             <li class="nav-item">
 
-                <a id="feedback-tab" data-toggle="tab" href="#feedback"><?php esc_html_e('Feedback','doctreat');?></a>
+                <a id="articles-tab" data-toggle="tab" href="#stories"><?php esc_html_e('Stories','doctreat');?></a>
 
             </li>
 
             <li class="nav-item">
 
-                <a id="articles-tab" data-toggle="tab" href="#articles"><?php esc_html_e('Articles','doctreat');?></a>
+                <a id="feedback-tab" data-toggle="tab" href="#community"><?php esc_html_e('Community','doctreat');?></a>
 
             </li>
+
+
+            <li class="nav-item">
+
+                <a id="articles-tab" data-toggle="tab" href="#feedback"><?php esc_html_e('Reviews','doctreat');?></a>
+
+            </li>
+
 
         </ul>
         </div></div></div>

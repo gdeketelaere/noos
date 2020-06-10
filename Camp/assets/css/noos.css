@@ -58,7 +58,8 @@
 .single-doctors .dc-card-holder .dc-aboutinfo,
 .single-doctors .dc-card-holder .dc-infotitle,
 .single-doctors .dc-card-holder .dc-specializationslist,
-.single-doctors .dc-card-holder .dc-description {
+.single-doctors .dc-card-holder .dc-description,
+.single-doctors .dc-card-holder .dc-consultation-details {
   float: none;
 }
 
@@ -187,16 +188,20 @@
   padding: 5px 20px;
   margin: 0 10px 5px 0;
   font-family: "Circular-book";
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .dc-docinfo-specialities .dc-doc-specilities-tag a {
   font-family: "Circular-book";
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .dc-docinfo-specialities .dc-doc-specilities-tag--symtomes {
   background-color: #ffdcdc;
+}
+
+.dc-docinfo-specialities .dc-doc-specilities-tag--symtomes--more {
+  background-color: #fd9999;
 }
 
 .dc-docinfo-specialities .dc-doc-specilities-tag a {
@@ -486,7 +491,9 @@
 }
 
 .single-doctors .dc-languagelist,
-.single-doctors .dc-kidsfriendly {
+.single-doctors .dc-kidsfriendly,
+.single-doctors .dc-specialitieslist,
+.single-doctors .dc-skillslist {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -495,20 +502,58 @@
           align-items: center;
 }
 
+.single-doctors .dc-languagelist .dc-expandedu,
+.single-doctors .dc-kidsfriendly .dc-expandedu,
+.single-doctors .dc-specialitieslist .dc-expandedu,
+.single-doctors .dc-skillslist .dc-expandedu {
+  float: none;
+  border: none;
+}
+
+.single-doctors .dc-languagelist .dc-expandedu li,
+.single-doctors .dc-kidsfriendly .dc-expandedu li,
+.single-doctors .dc-specialitieslist .dc-expandedu li,
+.single-doctors .dc-skillslist .dc-expandedu li {
+  padding-left: 0;
+}
+
+.single-doctors .dc-languagelist .dc-expandedu li em,
+.single-doctors .dc-kidsfriendly .dc-expandedu li em,
+.single-doctors .dc-specialitieslist .dc-expandedu li em,
+.single-doctors .dc-skillslist .dc-expandedu li em {
+  font-size: 14px;
+}
+
 .single-doctors .dc-languagelist .dc-specializationslist,
-.single-doctors .dc-kidsfriendly .dc-specializationslist {
+.single-doctors .dc-kidsfriendly .dc-specializationslist,
+.single-doctors .dc-specialitieslist .dc-specializationslist,
+.single-doctors .dc-skillslist .dc-specializationslist {
   width: auto;
 }
 
 .single-doctors .dc-languagelist .dc-infotitle,
-.single-doctors .dc-kidsfriendly .dc-infotitle {
+.single-doctors .dc-kidsfriendly .dc-infotitle,
+.single-doctors .dc-specialitieslist .dc-infotitle,
+.single-doctors .dc-skillslist .dc-infotitle {
   width: auto;
   margin-right: 20px;
+  min-width: 180px;
+}
+
+.single-doctors .dc-specialitieslist {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.single-doctors .dc-specialitieslist .dc-infotitle {
+  margin-top: 10px;
 }
 
 .single-doctors .dc-references .dc-docpostholder {
   border: 1px solid #e3e3e3;
   padding: 20px 40px;
+  float: none;
 }
 
 .single-doctors .dc-references .dc-docpostholder .dc-docpostcontent {
@@ -516,6 +561,7 @@
 }
 
 .single-doctors .dc-references .dc-docpostholder .dc-docpostcontent .dc-searchvtwo {
+  float: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -524,6 +570,7 @@
 
 .single-doctors .dc-references .dc-docpostholder .dc-docpostcontent .dc-title h3,
 .single-doctors .dc-references .dc-docpostholder .dc-docpostcontent .dc-title a {
+  float: none;
   color: #251f71;
   font-size: 22px;
   font-family: "Circular-medium";

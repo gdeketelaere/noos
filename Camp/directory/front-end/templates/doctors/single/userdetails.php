@@ -39,9 +39,6 @@ $_class = $_href_see_more == 1 ? 'fade' : 'active';
     }
     ?>
     <?php get_template_part('directory/front-end/templates/doctors/single/video'); ?>
-    <?php get_template_part('directory/front-end/templates/doctors/single/experience'); ?>
-    <?php get_template_part('directory/front-end/templates/doctors/single/education'); ?>
-    <?php get_template_part('directory/front-end/templates/doctors/single/awards'); ?>
     <?php get_template_part('directory/front-end/templates/doctors/single/memberships'); ?>
     <?php get_template_part('directory/front-end/templates/doctors/single/downloads'); ?>
 

@@ -17,8 +17,9 @@ $am_experiences	= doctreat_get_post_meta( $post_id,'am_experiences');
 if( !empty( $am_experiences ) ) {
 ?>
 <div class="dc-experiencedoc dc-aboutinfo">
+<div class="dc-skillslist">
 	<div class="dc-infotitle">
-		<h3><?php esc_html_e('Experience','doctreat');?></h3>
+		<h3><img class="dc-icon--small" src="<?php echo get_stylesheet_directory_uri() . '/assets/svg/skill.svg';?> "><?php esc_html_e('Experience','doctreat');?></h3>
 	</div>
 	<ul class="dc-expandedu">
 		<?php 
@@ -38,5 +39,6 @@ if( !empty( $am_experiences ) ) {
 			<?php } ?>
 		<?php } ?>
 	</ul>
+				</div>
 </div>
 <?php }

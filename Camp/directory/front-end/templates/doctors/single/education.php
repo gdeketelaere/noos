@@ -17,8 +17,9 @@ $education		= doctreat_get_post_meta( $post_id,'am_education');
 
 if( !empty( $education ) ){ ?>
 	<div class="dc-education-holder dc-aboutinfo">
+	<div class="dc-skillslist">
 		<div class="dc-infotitle">
-			<h3><?php esc_html_e('Education','doctreat');?></h3>
+			<h3><img class="dc-icon--small" src="<?php echo get_stylesheet_directory_uri() . '/assets/svg/skill.svg';?> "><?php esc_html_e('Education','doctreat');?></h3>
 		</div>
 		<ul class="dc-expandedu">
 			<?php
@@ -38,5 +39,6 @@ if( !empty( $education ) ){ ?>
 				<?php }?>
 			<?php }?>
 		</ul>
+					</div>
 	</div>
 <?php } ?>

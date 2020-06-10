@@ -38,15 +38,13 @@ $_class = $_href_see_more == 1 ? 'active':'active';
 
 ?>
 
-<div class="dc-location-holder tab-pane <?php echo $_class ?>" id="articles">
+<div class="dc-location-holder tab-pane <?php echo $_class ?>" id="stories">
 
-	<?php get_template_part('directory/front-end/templates/references'); ?>
-
-	<div class="dc-searchresult-holder" style="margin-top: 50px;">
+	<div class="dc-searchresult-holder">
 
 		<div class="dc-searchresult-head">
 
-			<div class="dc-title"><h3><?php esc_html_e('Articles','doctreat');?></h3></div>
+			<div class="dc-title"><h3><?php esc_html_e('Read Stories','doctreat');?></h3></div>
 
 		</div>
 

@@ -282,8 +282,8 @@ function camp_display_location_address ($location) {
 
 //Spécialités et symtomes du profil praticien
 
-function camp_get_terms_doctors($post_id='', $taxonomy='specialities', $show_number=5){
-		
+function camp_get_terms_doctors($post_id='', $taxonomy='specialities', $show_number=3){
+
 	if( !empty($post_id) ) {
 		$terms	= wp_get_post_terms( $post_id, $taxonomy, array( 'fields' => 'all' ) );
 		ob_start();
@@ -296,20 +296,31 @@ function camp_get_terms_doctors($post_id='', $taxonomy='specialities', $show_num
 			$remining_count	= $total_sp_count - $show_number;
             ?>
             <?php foreach( $terms as $term ){ 
-                $term_url	= get_term_link($term);?>
+				$term_url	= get_term_link($term);?>
+				<?php if( $sp_count<$show_number ){ ?>
                 <div class="dc-doc-specilities-tag dc-doc-specilities-tag--<?php echo $taxonomy; ?>">
 					<a href="<?php echo esc_url($term_url);?>"><?php echo esc_html($term->name);?></a>
-            	</div>   
-			<?php  } 
+				</div>   
+			<?php  
+				}
+				$sp_count++;
+			} 
+			if($sp_count > $show_number) { ?>
+				<div class="dc-doc-specilities-tag dc-doc-specilities-tag--<?php echo $taxonomy; ?>--more">
+					<a href="<?php the_permalink($post_id)?>#skills">+ more</a>
+				</div>   
+			<?php
+			}
+			
 		}
 		
 		echo ob_get_clean();
 			
 	}
 }
-add_action( 'camp_specilities_list', 'camp_get_terms_doctors',10,2 );
+add_action( 'camp_specilities_list', 'camp_get_terms_doctors',10,3 );
 
-function camp_get_terms_post($post_id='', $taxonomy='category', $show_number=5){
+function camp_get_terms_post($post_id='', $taxonomy='category', $show_number=3){
 		
 	if( !empty($post_id) ) {
 		$terms	= wp_get_post_terms( $post_id, $taxonomy, array( 'fields' => 'all' ) );

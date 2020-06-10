@@ -15,8 +15,9 @@ $post_id = $post->ID;
 $am_awards		= doctreat_get_post_meta( $post_id,'am_award');
 if( !empty( $am_awards ) ){?>
 	<div class="dc-awards-holder dc-aboutinfo">
+	<div class="dc-skillslist">
 		<div class="dc-infotitle">
-			<h3><?php esc_html_e('Awards and Recognitions','doctreat');?></h3>
+			<h3><img class="dc-icon--small" src="<?php echo get_stylesheet_directory_uri() . '/assets/svg/skill.svg';?> "><?php esc_html_e('Awards and Recognitions','doctreat');?></h3>
 		</div>
 		<ul class="dc-expandedu">
 			<?php 
@@ -26,6 +27,7 @@ if( !empty( $am_awards ) ){?>
 					<?php } ?>
 			<?php } ?>
 		</ul>
+		</div>
 	</div>
 <?php  }
 

@@ -45,11 +45,13 @@ while (have_posts()) {
 					<div class="<?php echo esc_attr($section_width); ?> float-left">
 
 						<div class="dc-card-holder"><?php get_template_part('directory/front-end/templates/doctors/single/userdetails'); ?></div>
-						<div class="dc-card-holder"><?php get_template_part('directory/front-end/templates/doctors/single/consultation'); ?></div>
+						<div class="dc-card-holder"><?php get_template_part('directory/front-end/templates/doctors/single/skills'); ?></div>
 						<div class="dc-card-holder"><?php get_template_part('directory/front-end/templates/doctors/single/locations'); ?></div>
-						<div class="dc-card-holder"><?php get_template_part('directory/front-end/templates/doctors/single/articles'); ?></div>
 						<div class="dc-card-holder"><?php get_template_part('directory/front-end/templates/doctors/single/services'); ?></div>
+						<div class="dc-card-holder"><?php get_template_part('directory/front-end/templates/doctors/single/articles'); ?></div>
+						<div class="dc-card-holder"><?php get_template_part('directory/front-end/templates/doctors/single/references'); ?></div>
 						<div class="dc-card-holder"><?php get_template_part('directory/front-end/templates/doctors/single/feedback'); ?></div>
+						<div class="dc-card-holder"><?php get_template_part('directory/front-end/templates/doctors/single/consultation'); ?></div>
 						<?php $_SESSION['_href_see_more'] = 0;
 						?>
 
