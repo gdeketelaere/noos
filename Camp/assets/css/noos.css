@@ -13,6 +13,8 @@
 
 .single-doctors .widget_text .textwidget {
   background: none;
+  float: none;
+  padding: 0;
 }
 
 .single-doctors .dc-main {
@@ -26,13 +28,6 @@
 
 .single-doctors .dc-breadcrumbarea {
   display: none;
-}
-
-.single-doctors .dc-icon--small {
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-  vertical-align: baseline;
 }
 
 .single-doctors .dc-card-holder {
@@ -172,6 +167,7 @@
 }
 
 .dc-docinfo-specialities {
+  padding-right: 40px;
   margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -660,6 +656,31 @@
   }
 }
 
+.tax-specialities .dc-innerbanner-holder,
+.tax-specialities .dc-footertopbar {
+  display: none;
+}
+
+.tax-specialities .background-blue {
+  background-color: #e5f0fe;
+  width: 100%;
+  padding: 60px 0;
+}
+
+.tax-specialities .spec-headerImage .dc-docsingleimg {
+  width: 100%;
+  padding-right: 20px;
+  border: none;
+  padding-right: 20px;
+}
+
+.tax-specialities .spec-desc p {
+  font-size: 18px;
+  line-height: 32px;
+  color: #5d5c5d;
+  font-family: "Circular-book";
+}
+
 iframe {
   float: none !important;
 }
@@ -675,5 +696,200 @@ iframe {
 
 .single-doctors .dc-footertopbar {
   display: none;
+}
+
+.container h1 {
+  font-size: 48px;
+  font-family: "Circular-bold";
+  color: #251f71;
+  margin-bottom: 40px;
+}
+
+.container h2 {
+  font-family: "Circular-medium";
+  font-size: 32px;
+  color: #251f71;
+  font-weight: normal;
+}
+
+.container .btn-primary {
+  font-family: "Circular-bold";
+  font-size: 18px;
+  background-color: #05a1fb !important;
+  color: white;
+  border-radius: 0;
+  border: none;
+  padding: 5px 40px;
+}
+
+.container .btn-primary:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.container .btn-secondary {
+  font-family: "Circular-book";
+  color: #05a1fb;
+  font-size: 18px;
+  background-color: white;
+  border: none;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.container .btn-secondary:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.container .btn-circle {
+  background-color: #05a1fb;
+  border-radius: 50%;
+}
+
+.dc-breadcrumbarea .dc-breadcrumb li {
+  font-family: "Circular-book";
+  font-size: 13px;
+}
+
+.dc-breadcrumbarea .dc-breadcrumb li:after {
+  content: "/";
+}
+
+.dc-breadcrumbarea .dc-breadcrumb li a {
+  color: #818181;
+}
+
+.dc-breadcrumbarea .dc-breadcrumb li strong {
+  color: #05a1fb;
+  background-color: #e5f0fe;
+  border-radius: 15px;
+  padding: 5px 10px;
+  margin-top: -5px;
+}
+
+.dc-breadcrumbarea .dc-breadcrumb li a,
+.dc-breadcrumbarea .dc-breadcrumb li strong {
+  font-family: "Circular-book";
+  font-size: 13px;
+}
+
+.dc-icon--small {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  vertical-align: baseline;
+}
+
+.dc-dotors-cards-list {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  margin-bottom: 50px;
+}
+
+.dc-dotors-cards-list .dc-card-holder {
+  position: relative;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 40px 20px;
+  margin: 20px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 60px;
+}
+
+.dc-dotors-cards-list .dc-card-holder:first-child {
+  margin-top: 20px !important;
+}
+
+.dc-dotors-cards-list .dc-docpostholder {
+  float: none;
+  overflow: initial;
+}
+
+.dc-dotors-cards-list .dc-docpostholder .dc-docpostcontent {
+  float: none;
+  overflow: initial;
+  display: block;
+  border: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.dc-dotors-cards-list .dc-docpostholder .dc-docpostcontent .dc-title {
+  float: none;
+}
+
+.dc-dotors-cards-list .dc-docpostholder .dc-docpostcontent .dc-title h3 {
+  text-align: left;
+  float: none;
+  font-family: "Circular-medium";
+  color: #251f71;
+  font-size: 18px;
+  border-bottom: 1px dashed #7ca0cf;
+  width: calc(100% - 80px);
+  margin-bottom: 20px;
+}
+
+.dc-dotors-cards-list .dc-docpostholder .dc-docpostcontent .dc-title h3 p,
+.dc-dotors-cards-list .dc-docpostholder .dc-docpostcontent .dc-title h3 a {
+  font-family: "Circular-medium";
+  color: #251f71;
+  font-size: 18px;
+  text-decoration: none;
+  float: none;
+}
+
+.dc-dotors-cards-list .dc-docpostholder .dc-docpostcontent .dc-docinfo {
+  float: none;
+  font-size: 12px;
+  font-family: "Circular-book";
+  line-height: 20px;
+  text-align: left;
+}
+
+.dc-dotors-cards-list .dc-docpostholder .dc-docpostcontent .dc-docinfo p {
+  float: none;
+  font-size: 12px;
+  font-family: "Circular-book";
+  line-height: 20px;
+}
+
+.dc-dotors-cards-list .dc-docpostholder .dc-docpostcontent .dc-docpostimg {
+  float: none;
+  background-color: #e5f0fe;
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  border-radius: 50%;
+  border: 20px solid #e5f0fe;
+}
+
+.dc-dotors-cards-list .dc-docpostholder .dc-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: left;
+  color: #251f71;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.dc-dotors-cards-list .dc-docpostholder .dc-actions img {
+  display: inline-block;
+}
+
+.dc-dotors-cards-list .dc-docpostholder .dc-actions p {
+  color: #251f71;
+  font-size: 14px;
+  margin: 0;
 }
 /*# sourceMappingURL=noos.css.map */

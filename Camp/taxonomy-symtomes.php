@@ -34,6 +34,7 @@ $found_desc=0;
 		<div class="col col-sm-8 spec-desc">
 			<div class="">
 				<h1>
+					
 					<?php echo esc_attr( get_queried_object()->name );?>
 				</h1>		
 				<div class="">

@@ -28,18 +28,19 @@ $found_cf=0;
 
 	<div class="row">
 
-		<div class="col col-sm-4">
+		<div class="col col-sm-6 spec-headerImage">
 
 			<figure class="dc-docsingleimg">
 				<img class="dc-ava-detail" src="<?php the_field('camp_photo_specialities','term_'.$current_term_id); ?>" alt="<?php echo esc_attr( get_queried_object()->name );?>">			
 			</figure>
 		</div>
-		<div class="col col-sm-8 spec-desc">
+		<div class="col col-sm-6 spec-desc">
 			<div class="">
 				<h1>
 					<?php echo esc_attr( get_queried_object()->name );?>
 				</h1>		
-				<div class="">
+				<div>
+					<p>
 					<?php			
 					if( have_rows('camp_text_specialities', 'term_'.$current_term_id) ):
 						while ( have_rows('camp_text_specialities', 'term_'.$current_term_id) ) : the_row();
@@ -53,124 +54,121 @@ $found_cf=0;
 					if( $found_desc===0):
 						echo esc_html( get_queried_object()->description );
 					endif;?>
+					</p>
 				</div>
 				<br>
-				<a href="#bloc_biencontre" class="dc-btn"><?php esc_html_e('Voir plus');?></a>	
+				<a href="#bloc_biencontre" class="dc-btn btn-secondary"><?php esc_html_e('Voir plus +');?></a>	
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="container" style="text-align: center;margin-bottom: 50px;">
-	<form action="<?php echo home_url( '/' ); ?>">
-		<div class="row">
+<div class="background-blue">
+	<div class="container" style="text-align: center;margin-bottom: 50px;">
+		<form action="<?php echo home_url( '/' ); ?>">
+			<div class="row">
 
-			<div class="service-heading-block col-md-12">
-				<h2 class="text-center text-primary title"><?php _e( 'Quelques spécialistes en ','camp' ); echo ucfirst(get_queried_object()->name) ; ?>            	
-				</h2>           
-			</div>
+				<div class="service-heading-block col-md-12">
+					<h2 class="text-center title"><?php _e( 'Quelques spécialistes en ','camp' ); echo ucfirst(get_queried_object()->name) ; ?>            	
+					</h2>           
+				</div>
+				<div class="dc-dotors-cards-list row">
+				<?php	
 
-			<?php	
-
-			$args = array('post_type' => 'doctors',
-						'tax_query' => array(
-							array(
-								'taxonomy' => 'specialities',
-								'field' => 'term_id',
-								'terms' => $current_term_id,
-							),
-						),           
-									
-					);
-			$loop = new WP_Query($args);
-
-			if($loop->have_posts()) {
-
-				$count=1;
-
-				while($loop->have_posts()) : $loop->the_post();
-
-					if ($count<=3) :
-
-						$doctor_avatar = apply_filters(
-						'doctreat_doctor_avatar_fallback', doctreat_get_doctor_avatar( array( 'width' => 255, 'height' => 250 ), get_the_ID() ), array( 'width' => 255, 'height' => 250 )
+				$args = array('post_type' => 'doctors',
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'specialities',
+									'field' => 'term_id',
+									'terms' => $current_term_id,
+								),
+							),           
+										
 						);
+				$loop = new WP_Query($args);
 
-						$doctor_avatar_2x = apply_filters(
-											'doctreat_doctor_avatar_fallback', doctreat_get_doctor_avatar( array( 'width' => 545, 'height' => 428 ), get_the_ID() ), array( 'width' => 545, 'height' => 428 )
-										);
-						$featured	= get_post_meta(get_the_ID(),'is_featured',true);
-						
-				?>
-						<div class="col col-sm-4">
-							<div class="CustomCard hoverCustomCard">
-								<div class="CustomCardheader text-white btn-primary">
-									<h5 class="col pt-2"><strong><?php the_title(); ?></strong></h5>              
-								</div>
-								<div class="avatar">
-									<?php if( !empty( $doctor_avatar ) ){?>
+				if($loop->have_posts()) {
+
+					$count=1;
+
+					while($loop->have_posts()) : $loop->the_post();
+
+						if ($count<=3) :
+
+							$doctor_avatar = apply_filters(
+							'doctreat_doctor_avatar_fallback', doctreat_get_doctor_avatar( array( 'width' => 255, 'height' => 250 ), get_the_ID() ), array( 'width' => 255, 'height' => 250 )
+							);
+
+							$doctor_avatar_2x = apply_filters(
+												'doctreat_doctor_avatar_fallback', doctreat_get_doctor_avatar( array( 'width' => 545, 'height' => 428 ), get_the_ID() ), array( 'width' => 545, 'height' => 428 )
+											);
+							$featured	= get_post_meta(get_the_ID(),'is_featured',true);
+							
+					?>
+							<div class="col col-sm-4" style="padding:25px;">
+								<div class="dc-card-holder dc-docpostholder" style="height: 100%;">
+									<div class="dc-docpostcontent">
+										<div>
+											<figure class="dc-docpostimg">
+												<?php the_post_thumbnail( array( 100, 100, 'class' => 'post-thumb dc-image-res') );?>
+												<?php the_post_thumbnail( array( 200, 200, 'class' => 'post-thumb dc-image-res-2x') );?>
+											</figure>
+
+											<div class="dc-title">
+												<h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>   
+												<div class="dc-docinfo-specialities">
+													<?php do_action('camp_specilities_list',get_the_ID());?>
+												</div>         
+											</div>
+												
+											<div class="dc-docinfo">		            	
+												<p> 
+													<?php
+													$content = get_the_content();
+													if($content) {
+														$content = strip_tags($content);
+														echo substr($content, 0, 150).'...';
+													}
+													?>                            	
+												</p>
+											</div>
+										</div>
+
 										
-											<img class="dc-ava-detail" src="<?php echo esc_url( $doctor_avatar );?>" alt="<?php echo esc_attr( get_the_title() );?>">
-											<img class="dc-ava-detail-2x" src="<?php echo esc_url( $doctor_avatar_2x );?>" alt="<?php echo esc_attr( get_the_title() );?>">
-											<?php if( !empty( $featured ) && intval($featured) > 0 ){ ?>
-												<figcaption>
-													<span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
-												</figcaption>
-											<?php } ?>
-										
-									<?php }?>
-									
-								</div>
-								<div class="info">
-									<div class="desc">
-
-										<?php
-										$symtomes	= get_the_term_list( get_the_ID(), 'specialities', '<ul class="dc-specializationslist"><li><span>', '</span></li><li><span>', '</span></li></ul>' );
-										echo do_shortcode($symtomes);?>
-
-									</div>		            	
-								
-									<div class="desc"> <?php
-										$content = get_the_content();
-										$content = strip_tags($content);
-										echo substr($content, 0, 200).'...';
-										?>                            	
 									</div>
-									<footer class="blockquote-footer float-right">     		
+
+									<div class="dc-actions">
+											<?php 
+											$address	= get_post_meta( get_the_ID() , '_address',true );
+											$address	= !empty( $address ) ? $address : 'Paris';
+											?>
+										<p><img class="dc-icon--small" src="<?php echo get_stylesheet_directory_uri() . '/assets/svg/map-pointer.svg'; ?> "/><?php echo $address ;?></p>	
+										<a href="<?php the_permalink(); ?>" class="btn btn-circle" rel="publisher">
+										<img class="dc-icon--small" src="<?php echo get_stylesheet_directory_uri() . '/assets/svg/arrow.svg'; ?> "/>
+										</a>	
 										
-										<span><i class="ti-direction-alt"></i>
-										<?php
-										$locations	= get_the_term_list( get_the_ID(), 'locations');
-										echo do_shortcode($locations);?>
-										</span>		            		
-									
-									</footer>
-								</div>
-								<div class="bottom mx-auto">			                
-									<a href="<?php the_permalink(); ?>" class="btn btn-primary btn-sm mx-2" rel="publisher">
-										<img draggable="false" role="img" class="emoji" alt="▶" src="https://s.w.org/images/core/emoji/12.0.0-1/svg/25b6.svg">
-									</a>		                
-									
-								</div>
-							</div>
-						</div>				
+									</div>
+								</div>	
+							</div>			
 
-					<?php endif;
+						<?php endif;
 
-					$count++;
+						$count++;
 
-				endwhile; 
-			} 
-		?>
-		</div>
-		<div class="form-group submit_field">
-			<input type="hidden" name="s" value="<?php the_search_query(); ?>" id="s">
-			<input type="hidden" name="c_see_more_type" value="doctors">
-			<input type="hidden" name="c_see_more_filter_key" value="specialities">
-			<input type="hidden" name="c_see_more_filter_value" value="<?php echo $current_term_slug ;?>">			
-			<input type="submit" name="" value="<?php _e( 'Découvrir plus de praticiens','camp' );?>" class="dc-btn">
-		</div>
-	</form>
+					endwhile; 
+				} 
+			?>
+				</div>
+			</div>
+			<div class="form-group submit_field">
+				<input type="hidden" name="s" value="<?php the_search_query(); ?>" id="s">
+				<input type="hidden" name="c_see_more_type" value="doctors">
+				<input type="hidden" name="c_see_more_filter_key" value="specialities">
+				<input type="hidden" name="c_see_more_filter_value" value="<?php echo $current_term_slug ;?>">			
+				<input type="submit" name="" value="<?php _e( 'Découvrir plus de praticiens','camp' );?>" class="dc-btn btn-primary ">
+			</div>
+		</form>
+	</div>
 </div>
 
 <div class="container text-center" style="margin-bottom: 50px;">
@@ -328,6 +326,43 @@ $found_cf=0;
 		</div>
 	</div>
 </div>
+<script>
+// Select all links with hashes
+jQuery('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
 
+      var target = jQuery(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+
+      if (target.length) {
+
+        event.preventDefault();
+        var posY = target.offset().top;
+        jQuery('html, body').animate({
+          scrollTop: posY - 150
+        }, 1000, function() {
+
+          var $target = jQuery(target);
+          //$target.focus();
+          if ($target.is(":focus")) { 
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); 
+            //$target.focus(); 
+          };
+        });
+      }
+    }
+  });
+</script>
 <?php
 get_footer();

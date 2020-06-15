@@ -6,6 +6,8 @@
 @import "./noos/doctorsingle/references";
 @import "./noos/doctorsingle/articles";
 
+@import "./noos/specialities/specialities";
+
 iframe {
   float: none !important;
 }
@@ -22,5 +24,184 @@ iframe {
 .single-doctors {
   .dc-footertopbar {
     display: none;
+  }
+}
+
+.container {
+  h1 {
+    font-size: 48px;
+    font-family: "Circular-bold";
+    color: $dark-blue;
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-family: "Circular-medium";
+    font-size: 32px;
+    color: $dark-blue;
+    font-weight: normal;
+  }
+  .btn-primary {
+    font-family: "Circular-bold";
+    font-size: 18px;
+    background-color: $nav-blue !important;
+    color: white;
+    border-radius: 0;
+    border: none;
+    padding: 5px 40px;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+  .btn-secondary {
+    font-family: "Circular-book";
+    color: $nav-blue;
+    font-size: 18px;
+    background-color: white;
+    border: none;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+    &:hover {
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+    }
+  }
+  .btn-circle {
+    background-color: $nav-blue;
+    border-radius: 50%;
+  }
+}
+
+.dc-breadcrumbarea {
+  .dc-breadcrumb {
+    li {
+      font-family: "Circular-book";
+      font-size: 13px;
+      &:after {
+        content: "/";
+      }
+      a {
+        color: $grey-content;
+      }
+      strong {
+        color: $nav-blue;
+        background-color: $background-light;
+        border-radius: 15px;
+        padding: 5px 10px;
+        margin-top: -5px;
+      }
+      a,
+      strong {
+        font-family: "Circular-book";
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.dc-icon {
+  &--small {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    vertical-align: baseline;
+  }
+}
+
+.dc-dotors-cards-list {
+  align-items: stretch;
+  margin-bottom: 50px;
+
+  .dc-card-holder {
+    position: relative;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 40px 20px;
+    margin: 20px 0;
+    box-sizing: border-box;
+
+    &:first-child {
+      margin-top: 20px !important;
+    }
+    margin-top: 60px;
+  }
+  .dc-docpostholder {
+    float: none;
+    overflow: initial;
+
+    .dc-docpostcontent {
+      float: none;
+      overflow: initial;
+      display: block;
+      border: none;
+      padding: 0;
+      margin-bottom: 20px;
+
+      .dc-title {
+        float: none;
+        h3 {
+          text-align: left;
+          float: none;
+          font-family: "Circular-medium";
+          color: $dark-blue;
+          font-size: 18px;
+          border-bottom: 1px dashed $dashed-line;
+          width: calc(100% - 80px);
+          margin-bottom: 20px;
+          p,
+          a {
+            font-family: "Circular-medium";
+            color: $dark-blue;
+            font-size: 18px;
+            text-decoration: none;
+            float: none;
+          }
+        }
+      }
+      .dc-docinfo {
+        float: none;
+        font-size: 12px;
+        font-family: "Circular-book";
+        line-height: 20px;
+        text-align: left;
+        p {
+          float: none;
+          font-size: 12px;
+          font-family: "Circular-book";
+          line-height: 20px;
+        }
+      }
+
+      .dc-docpostimg {
+        float: none;
+        background-color: $background-light;
+        width: 140px;
+        height: 140px;
+        position: absolute;
+        top: -70px;
+        right: -70px;
+        border-radius: 50%;
+        border: 20px solid $background-light;
+      }
+    }
+
+    .dc-actions {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      text-align: left;
+      color: $dark-blue;
+      font-size: 14px;
+      padding: 20px;
+
+      img {
+        display: inline-block;
+      }
+      p {
+        color: $dark-blue;
+        font-size: 14px;
+        margin: 0;
+      }
+    }
   }
 }

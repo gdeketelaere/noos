@@ -124,7 +124,7 @@ $loop = new WP_Query($args);
 
 	<div class="dc-dashboardboxcontent dc-categoriescontentholder dc-categoriesholder">		
 
-		<div class="dc-searchresult-grid dc-searchresult-list dc-searchvlistvtwo">
+		<div class="dc-searchresult-grid dc-searchresult-list dc-searchvlistvtwo dc-dotors-cards-list">
 
 			<?php
 
@@ -166,7 +166,7 @@ $loop = new WP_Query($args);
 
 							<div class="dc-docpostcontent">	
 
-								<div class="">								
+								<div>								
 
 									<figure class="dc-docpostimg" >
 
@@ -176,46 +176,31 @@ $loop = new WP_Query($args);
 
 									</figure>
 
-									<div class="dc-title">
-										
-									<h3>
-
-											<a href="<?php the_permalink();?>"><?php the_title();?></a>
-
+									<div class="dc-title">						
+										<h3><a href="<?php the_permalink();?>"><?php the_title();?></a>
 											<?php if (!empty($_is_verified)) {?>
-
 												<i class="far fa-check-circle dc-awardtooltip dc-tipso tipso_style"></i><?php
-
 											}
-
 											?>												
-
 										</h3>
-									<div class="dc-docinfo-specialities">
-										<?php do_action('camp_specilities_list',$post_ref_id);?>
-									</div>
-									<div class="dc-docinfo-specialities">
-										<?php do_action('camp_specilities_list',$post_ref_id,'symtomes');?>
-									</div>
-
-																											
-
+										<div class="dc-docinfo-specialities">
+											<?php do_action('camp_specilities_list',$post_ref_id);?>
+										</div>
+										<div class="dc-docinfo-specialities">
+											<?php do_action('camp_specilities_list',$post_ref_id,'symtomes');?>
+										</div>
 									</div>
 
 									<div class="dc-docinfo">
-
 										<?php echo $comment_resume.'...'; ?>
-
 									</div>									
-
-								</div>
-
-								<div class="dc-actions">
-
-								<img class="dc-icon--small" src="<?php echo get_stylesheet_directory_uri() . '/assets/svg/map-pointer.svg'; ?> "/><?php echo $address ;?>										
 
 								</div>						
 
+							</div>
+
+							<div class="dc-actions">
+								<img class="dc-icon--small" src="<?php echo get_stylesheet_directory_uri() . '/assets/svg/map-pointer.svg'; ?> "/><?php echo $address ;?>
 							</div>
 
 						</div>	
